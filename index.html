@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meridian Ethiopia — ERPNext Healthcare Desk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Left Navigation Sidebar (ERPNext Desk Style) -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-icon-box">M</div>
+        <div class="sidebar-header-text">
+          <h1 id="brand-title">Meridian Healthcare</h1>
+          <p id="brand-sub">ERPNext Desk • Ethiopia</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group-title" id="nav-group-main">Workspaces</div>
+        
+        <a class="nav-item active" data-screen="dashboard" id="nav-dashboard">
+          <svg class="nav-svg-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg>
+          <span class="nav-text">Dashboard</span>
+        </a>
+
+        <div class="nav-group-title" id="nav-group-reception">Front Desk & Reception</div>
+
+        <a class="nav-item" data-screen="reception" id="nav-reception">
+          <svg class="nav-svg-icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+          <span class="nav-text">Patient Registration</span>
+        </a>
+
+        <a class="nav-item" data-screen="patients" id="nav-patients">
+          <svg class="nav-svg-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          <span class="nav-text">Patient Records</span>
+        </a>
+
+        <a class="nav-item" data-screen="appointments" id="nav-appointments">
+          <svg class="nav-svg-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span class="nav-text">Appointments</span>
+        </a>
+
+        <div class="nav-group-title" id="nav-group-clinical">Clinical & Diagnostics</div>
+
+        <a class="nav-item" data-screen="consultation" id="nav-consultation">
+          <svg class="nav-svg-icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          <span class="nav-text">Doctor Consultation</span>
+        </a>
+
+        <a class="nav-item" data-screen="laboratory" id="nav-laboratory">
+          <svg class="nav-svg-icon" viewBox="0 0 24 24"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55A2 2 0 0 0 6.516 23.5h10.968a2 2 0 0 0 1.796-2.95l-5.069-10.127A2 2 0 0 1 14 9.527V2"></path><line x1="8.5" y1="2" x2="15.5" y2="2"></line><line x1="7" y1="16" x2="17" y2="16"></line></svg>
+          <span class="nav-text">Laboratory Diagnostics</span>
+        </a>
+
+        <a class="nav-item" data-screen="prescriptions" id="nav-prescriptions">
+          <svg class="nav-svg-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span class="nav-text">E-Prescriptions</span>
+        </a>
+
+        <div class="nav-group-title" id="nav-group-pharmacy">Pharmacy & Stock</div>
+
+        <a class="nav-item" data-screen="pos" id="nav-pos">
+          <svg class="nav-svg-icon" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          <span class="nav-text">Pharmacy POS</span>
+        </a>
+
+        <a class="nav-item" data-screen="inventory" id="nav-inventory">
+          <svg class="nav-svg-icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+          <span class="nav-text">Stock Inventory</span>
+        </a>
+
+        <div class="nav-group-title" id="nav-group-accounting">Accounting & Revenue</div>
+
+        <a class="nav-item" data-screen="billing" id="nav-billing">
+          <svg class="nav-svg-icon" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          <span class="nav-text">Billing & Insurance</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="eth-flag-strip"></div>
+        <div>
+          <strong id="lbl-footer-location" style="color:#FFF;">Kidus Michael General Hospital</strong><br>
+          <span style="font-size:0.7rem; color:#9CA3AF;">Addis Ababa, Ethiopia • EFDA Logged</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- Topbar Header -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">☰</button>
+          <div class="topbar-title-box">
+            <h2 class="topbar-title" id="lbl-hospital-name">Kidus Michael General Hospital</h2>
+            <span class="efda-badge">EFDA Compliant</span>
+          </div>
+        </div>
+
+        <!-- Global Search Bar (ERPNext Command Bar) -->
+        <div class="global-search-box">
+          <svg class="nav-svg-icon" style="color:var(--text-muted);" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" class="global-search-input" placeholder="Search or type a command (e.g. Patient, Lab, POS)...">
+          <span class="kbd-shortcut">Ctrl+K</span>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Language Selector -->
+          <div class="lang-toggle-btn" id="lang-toggle-btn" title="Toggle Amharic / English Localization">
+            <span class="lang-opt active" id="lang-en">EN</span>
+            <span class="lang-opt" id="lang-am">አማ</span>
+          </div>
+
+          <!-- User Profile -->
+          <div class="user-profile">
+            <div class="user-avatar">AM</div>
+            <div class="user-info">
+              <span class="user-name">Dr. Abel Mengistu</span>
+              <span class="user-role" id="lbl-user-role">Chief Medical Officer</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Views Container -->
+      <main class="content-viewport">
+        <!-- 1. DASHBOARD VIEW -->
+        <section class="view-screen active" id="screen-dashboard">
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-header-row">
+                <span class="metric-label" id="lbl-stat-appts">Today's Appointments</span>
+                <svg class="nav-svg-icon" style="color:var(--primary-blue);" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              </div>
+              <div class="metric-value">14</div>
+              <div class="metric-sub" id="sub-stat-appts">6 Confirmed • 4 Pending</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-header-row">
+                <span class="metric-label" id="lbl-stat-sales">MTD Pharmacy Sales</span>
+                <svg class="nav-svg-icon" style="color:var(--sage-green);" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </div>
+              <div class="metric-value">ETB 148,450.00</div>
+              <div class="metric-sub" id="sub-stat-sales">+12.4% vs last month</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-header-row">
+                <span class="metric-label" id="lbl-stat-reorder">Items Below Reorder</span>
+                <svg class="nav-svg-icon" style="color:var(--amber);" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              </div>
+              <div class="metric-value">3 Items</div>
+              <div class="metric-sub" id="sub-stat-reorder">Requires EFDA replenishment</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-header-row">
+                <span class="metric-label" id="lbl-stat-outstanding">Outstanding Invoices</span>
+                <svg class="nav-svg-icon" style="color:var(--clay-red);" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+              </div>
+              <div class="metric-value">ETB 32,100.00</div>
+              <div class="metric-sub" id="sub-stat-outstanding">CBHI & Private copays</div>
+            </div>
+          </div>
+
+          <div class="dashboard-grid">
+            <!-- Schedule Panel -->
+            <div class="panel">
+              <div class="panel-header">
+                <h3 class="panel-title" id="lbl-title-todays-schedule">Today's Schedule</h3>
+                <span class="mono" style="font-size:0.75rem; color:var(--text-muted);" id="current-date-str">Tuesday, 01 Sep 2026</span>
+              </div>
+              <div class="panel-body" style="padding:0;">
+                <div class="custom-table-container">
+                  <table class="custom-table">
+                    <thead>
+                      <tr>
+                        <th>Time</th>
+                        <th>Patient Name</th>
+                        <th>Practitioner</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="dashboard-schedule-body">
+                      <!-- Rendered by JS -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stock Alerts Panel -->
+            <div class="panel">
+              <div class="panel-header">
+                <h3 class="panel-title" id="lbl-title-stock-alerts">Stock & Expiry Alerts</h3>
+                <span class="efda-badge">EFDA Monitored</span>
+              </div>
+              <div class="panel-body" style="padding:0;">
+                <div class="custom-table-container">
+                  <table class="custom-table">
+                    <thead>
+                      <tr>
+                        <th>Item</th>
+                        <th>Batch</th>
+                        <th>Qty</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="dashboard-alerts-body">
+                      <!-- Rendered by JS -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NEW MODULE 1: RECEPTION & PATIENT REGISTRATION -->
+        <section class="view-screen" id="screen-reception">
+          <div style="display:grid; grid-template-columns: 1fr 340px; gap:16px;">
+            <!-- Left Form Panel -->
+            <div class="panel">
+              <div class="panel-header">
+                <h3 class="panel-title" id="lbl-title-reception">Patient Registration & Walk-in Triage</h3>
+                <span class="efda-badge">Intake Desk</span>
+              </div>
+              <div class="panel-body">
+                <form id="reception-register-form">
+                  <div class="form-grid" style="margin-bottom:14px;">
+                    <div class="form-group">
+                      <label class="form-label">Full Patient Name *</label>
+                      <input type="text" class="input-text" id="reg-name" placeholder="e.g. Hiwot Tadesse" required>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">Age (Years) *</label>
+                      <input type="number" class="input-text" id="reg-age" placeholder="e.g. 28" min="0" max="120" required>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">Gender *</label>
+                      <select class="select-custom" id="reg-gender">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">Phone Number (+251) *</label>
+                      <input type="text" class="input-text" id="reg-phone" placeholder="+251 911 000 111" required>
+                    </div>
+
+                    <div class="form-group" style="grid-column: span 2;">
+                      <label class="form-label">Address (Addis Ababa Sub-city & Woreda)</label>
+                      <input type="text" class="input-text" id="reg-address" placeholder="e.g. Bole Sub-city, Woreda 05, Addis Ababa">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">Payer / Insurance Scheme</label>
+                      <select class="select-custom" id="reg-payer">
+                        <option value="cbhi">CBHI Scheme (Community Insurance)</option>
+                        <option value="nyala">Nyala Insurance S.C.</option>
+                        <option value="self">Private / Out-of-Pocket</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">Known Allergies</label>
+                      <input type="text" class="input-text" id="reg-allergies" placeholder="e.g. Penicillin, Sulfa or NKDA">
+                    </div>
+                  </div>
+
+                  <div style="border-top:1px solid var(--border); padding-top:14px; display:flex; justify-content:flex-end; gap:10px;">
+                    <button type="reset" class="btn btn-secondary">Reset Form</button>
+                    <button type="submit" class="btn btn-primary">Register Patient & Create Record</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Right Intake Log Panel -->
+            <div class="panel">
+              <div class="panel-header">
+                <h3 class="panel-title">Today's Intake Queue</h3>
+                <span class="mono" style="font-size:0.75rem; color:var(--text-muted);">Intake Log</span>
+              </div>
+              <div class="panel-body" style="padding:0;">
+                <div class="custom-table-container">
+                  <table class="custom-table">
+                    <thead>
+                      <tr>
+                        <th>Patient</th>
+                        <th>ID</th>
+                        <th>Payer</th>
+                      </tr>
+                    </thead>
+                    <tbody id="reception-recent-body">
+                      <!-- Rendered by JS -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. PATIENT RECORDS VIEW -->
+        <section class="view-screen" id="screen-patients">
+          <div class="split-view">
+            <!-- Left List Pane -->
+            <div class="patient-list-pane">
+              <div class="search-bar-box">
+                <input type="text" class="input-search" id="patient-search-input" placeholder="Search patient name, ID or phone...">
+              </div>
+              <div class="patient-list" id="patients-list-container">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Right Detail Pane -->
+            <div class="patient-detail-pane" id="patient-detail-container">
+              <!-- Rendered by JS based on selected patient -->
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. APPOINTMENTS VIEW -->
+        <section class="view-screen" id="screen-appointments">
+          <div class="panel">
+            <div class="panel-header">
+              <h3 class="panel-title" id="lbl-title-appointments">Appointment Management & Clinical Agenda</h3>
+              <div class="agenda-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Confirmed">Confirmed</button>
+                <button class="filter-btn" data-filter="Pending">Pending</button>
+                <button class="filter-btn" data-filter="In Progress">In Progress</button>
+              </div>
+            </div>
+            <div class="panel-body" style="padding:0;">
+              <div class="custom-table-container">
+                <table class="custom-table">
+                  <thead>
+                    <tr>
+                      <th>Time</th>
+                      <th>Patient ID</th>
+                      <th>Patient Name</th>
+                      <th>Practitioner & Department</th>
+                      <th>Consultation Type</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="appointments-table-body">
+                    <!-- Rendered by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NEW MODULE 2: DOCTOR CONSULTATION -->
+        <section class="view-screen" id="screen-consultation">
+          <div class="panel">
+            <div class="panel-header">
+              <h3 class="panel-title" id="lbl-title-consultation">Doctor Encounter & Clinical Examination</h3>
+              <span class="mono" style="font-size:0.75rem; color:var(--text-muted);">Physician Workspace</span>
+            </div>
+            <div class="panel-body">
+              <div style="display:flex; gap:16px; align-items:center; margin-bottom:16px; padding-bottom:14px; border-bottom:1px solid var(--border);">
+                <div style="flex:1;">
+                  <label class="form-label" id="lbl-consult-patient-select">Select Patient for Encounter:</label>
+                  <select class="select-custom" id="consult-patient-select">
+                    <!-- Rendered by JS -->
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label">Attending Physician:</label>
+                  <div style="font-weight:600; font-size:0.85rem;" id="lbl-consult-physician">Dr. Abel Mengistu</div>
+                </div>
+              </div>
+
+              <!-- Vitals Panel -->
+              <h4 style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;">Patient Vital Signs (Triage Data)</h4>
+              <div class="vitals-grid">
+                <div class="vital-card">
+                  <div class="vital-label">BP (mmHg)</div>
+                  <input type="text" class="vital-input" id="vital-bp" value="128/82">
+                </div>
+                <div class="vital-card">
+                  <div class="vital-label">Pulse (bpm)</div>
+                  <input type="text" class="vital-input" id="vital-pulse" value="74">
+                </div>
+                <div class="vital-card">
+                  <div class="vital-label">Temp (°C)</div>
+                  <input type="text" class="vital-input" id="vital-temp" value="36.8">
+                </div>
+                <div class="vital-card">
+                  <div class="vital-label">Weight (kg)</div>
+                  <input type="text" class="vital-input" id="vital-weight" value="68">
+                </div>
+                <div class="vital-card">
+                  <div class="vital-label">SpO2 (%)</div>
+                  <input type="text" class="vital-input" id="vital-spo2" value="98%">
+                </div>
+              </div>
+
+              <div class="form-grid" style="margin-bottom:16px;">
+                <div class="form-group" style="grid-column: span 2;">
+                  <label class="form-label">Chief Complaints & Clinical Observations</label>
+                  <textarea class="textarea-custom" id="consult-complaints" rows="3" placeholder="Document patient symptoms, duration, and clinical history..."></textarea>
+                </div>
+
+                <div class="form-group" style="grid-column: span 2;">
+                  <label class="form-label">Diagnosis / Impression</label>
+                  <select class="select-custom" id="consult-diagnosis">
+                    <option value="Hypertension (Stage 1)">Hypertension (Stage 1)</option>
+                    <option value="Type 2 Diabetes Mellitus">Type 2 Diabetes Mellitus</option>
+                    <option value="Acute Upper Respiratory Tract Infection">Acute Upper Respiratory Tract Infection</option>
+                    <option value="Malaria (Plasmodium Falciparum)">Malaria (Plasmodium Falciparum)</option>
+                    <option value="Acute Gastritis">Acute Gastritis</option>
+                    <option value="Routine Pregnancy Follow-up (ANC)">Routine Pregnancy Follow-up (ANC)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="border-top:1px solid var(--border); padding-top:14px; display:flex; justify-content:flex-end; gap:10px;">
+                <button class="btn btn-secondary" onclick="switchScreen('prescriptions')">Create E-Prescription</button>
+                <button class="btn btn-primary" id="btn-save-encounter">Save Encounter to Patient Timeline</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NEW MODULE 3: LABORATORY DIAGNOSTICS -->
+        <section class="view-screen" id="screen-laboratory">
+          <div class="panel">
+            <div class="panel-header">
+              <h3 class="panel-title" id="lbl-title-laboratory">Laboratory Diagnostics & Test Orders</h3>
+              <div class="agenda-filters">
+                <button class="filter-btn active" data-labfilter="all">All Tests</button>
+                <button class="filter-btn" data-labfilter="Pending">Pending</button>
+                <button class="filter-btn" data-labfilter="Completed">Completed</button>
+              </div>
+            </div>
+            <div class="panel-body" style="padding:0;">
+              <div class="custom-table-container">
+                <table class="custom-table">
+                  <thead>
+                    <tr>
+                      <th>Order ID</th>
+                      <th>Patient Name & ID</th>
+                      <th>Diagnostic Test Name</th>
+                      <th>Ordering Physician</th>
+                      <th>Result Summary</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="laboratory-table-body">
+                    <!-- Rendered by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NEW MODULE 4: E-PRESCRIPTIONS -->
+        <section class="view-screen" id="screen-prescriptions">
+          <div style="display:grid; grid-template-columns: 1fr 360px; gap:16px;">
+            <!-- Left Recent Prescriptions Table -->
+            <div class="panel">
+              <div class="panel-header">
+                <h3 class="panel-title" id="lbl-title-prescriptions">Issued E-Prescriptions Log</h3>
+                <span class="efda-badge">EFDA Tracked</span>
+              </div>
+              <div class="panel-body" style="padding:0;">
+                <div class="custom-table-container">
+                  <table class="custom-table">
+                    <thead>
+                      <tr>
+                        <th>Rx Code</th>
+                        <th>Patient</th>
+                        <th>Medication & Dosage</th>
+                        <th>Physician</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="prescriptions-table-body">
+                      <!-- Rendered by JS -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Issue Prescription Panel -->
+            <div class="panel">
+              <div class="panel-header">
+                <h3 class="panel-title">Issue New E-Prescription</h3>
+              </div>
+              <div class="panel-body">
+                <form id="issue-rx-form">
+                  <div class="form-group" style="margin-bottom:12px;">
+                    <label class="form-label">Select Patient:</label>
+                    <select class="select-custom" id="rx-patient-select">
+                      <!-- Populated by JS -->
+                    </select>
+                  </div>
+
+                  <div class="form-group" style="margin-bottom:12px;">
+                    <label class="form-label">Select Medication (EFDA List):</label>
+                    <select class="select-custom" id="rx-drug-select">
+                      <!-- Populated by JS -->
+                    </select>
+                  </div>
+
+                  <div class="form-group" style="margin-bottom:12px;">
+                    <label class="form-label">Dosage Instructions:</label>
+                    <input type="text" class="input-text" id="rx-dosage" placeholder="e.g. 1 tab TID after meals for 7 days" required>
+                  </div>
+
+                  <div class="form-group" style="margin-bottom:16px;">
+                    <label class="form-label">Quantity to Dispense:</label>
+                    <input type="number" class="input-text" id="rx-qty" value="1" min="1" max="100" required>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary" style="width:100%;">
+                    Issue & Send to Pharmacy POS Queue
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. PHARMACY POS VIEW -->
+        <section class="view-screen" id="screen-pos">
+          <div class="pos-grid">
+            <!-- Left Drug Catalog -->
+            <div class="drug-catalog-panel">
+              <div class="search-bar-box" style="display:flex; gap:10px;">
+                <input type="text" class="input-search" id="drug-search-input" placeholder="Search drug name, batch or active ingredient...">
+              </div>
+              <div class="catalog-grid" id="drug-catalog-container">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Right Cart Panel -->
+            <div class="cart-panel">
+              <div class="panel-header">
+                <h3 class="panel-title" id="lbl-title-dispensing">Dispensing Cart</h3>
+                <span class="efda-badge">EFDA Approved</span>
+              </div>
+              
+              <div class="cart-patient-selector">
+                <label style="font-size:0.75rem; color:var(--text-muted); font-weight:600; display:block; margin-bottom:4px;" id="lbl-link-patient">Link Patient Record:</label>
+                <select class="select-custom" id="cart-patient-select">
+                  <!-- Rendered by JS -->
+                </select>
+              </div>
+
+              <div class="cart-items-list" id="cart-items-container">
+                <!-- Rendered by JS -->
+              </div>
+
+              <div class="cart-summary-footer">
+                <div class="summary-line">
+                  <span id="lbl-subtotal">Subtotal:</span>
+                  <span class="mono" id="cart-subtotal-val">ETB 0.00</span>
+                </div>
+                <div class="summary-line">
+                  <span id="lbl-vat">EFDA Standard Sales Tax (0%):</span>
+                  <span class="mono" id="cart-vat-val">ETB 0.00</span>
+                </div>
+                <div class="summary-line total">
+                  <span id="lbl-total">Total Amount:</span>
+                  <span class="mono" id="cart-total-val">ETB 0.00</span>
+                </div>
+
+                <button class="btn btn-primary" style="width:100%; margin-top:14px; padding:10px;" id="btn-checkout-pos">
+                  Checkout & Dispense Medicine
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. INVENTORY VIEW -->
+        <section class="view-screen" id="screen-inventory">
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title" id="lbl-title-inventory">Medicine & Stock Inventory</h3>
+                <p style="font-size:0.75rem; color:var(--text-muted); margin-top:2px;">Real-time batch tracking & EFDA national medicine compliance ledger</p>
+              </div>
+              <div class="efda-badge">
+                EFDA Registered Inventory
+              </div>
+            </div>
+
+            <div style="padding: 10px 18px; background:#F9FAFB; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <input type="text" class="input-search" id="inventory-search-input" placeholder="Filter inventory items by name, batch or category..." style="max-width:340px;">
+              <span style="font-size:0.75rem; color:var(--text-muted);" id="lbl-inventory-count">Showing 8 monitored items</span>
+            </div>
+
+            <div class="panel-body" style="padding:0;">
+              <div class="custom-table-container">
+                <table class="custom-table">
+                  <thead>
+                    <tr>
+                      <th>Item Name & Form</th>
+                      <th>Category</th>
+                      <th>Batch Code</th>
+                      <th>Qty on Hand</th>
+                      <th>Reorder Level</th>
+                      <th>Expiry Date</th>
+                      <th>Status</th>
+                      <th>EFDA Regulation</th>
+                    </tr>
+                  </thead>
+                  <tbody id="inventory-table-body">
+                    <!-- Rendered by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. BILLING & INSURANCE VIEW -->
+        <section class="view-screen" id="screen-billing">
+          <div class="billing-layout">
+            <!-- Left Consolidated Invoice Panel -->
+            <div class="panel">
+              <div class="panel-header">
+                <h3 class="panel-title" id="lbl-title-billing">Consolidated Patient Invoice</h3>
+                <span class="mono" style="font-weight:600; color:var(--text-muted);">INV-2026-4029</span>
+              </div>
+              <div class="panel-body">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid var(--border);">
+                  <div>
+                    <label style="font-size:0.75rem; color:var(--text-muted); font-weight:600; display:block;" id="lbl-select-patient-invoice">Select Patient:</label>
+                    <select class="select-custom" id="billing-patient-select" style="min-width:240px; margin-top:4px;">
+                      <!-- Populated by JS -->
+                    </select>
+                  </div>
+                  <div style="text-align:right;">
+                    <span class="mono" style="font-size:0.75rem; color:var(--text-muted);" id="lbl-invoice-date">Date: 01 Sep 2026</span><br>
+                    <span class="status-pill status-warning"><span class="status-dot"></span> PENDING PAYMENT</span>
+                  </div>
+                </div>
+
+                <!-- Invoice Line Items Table -->
+                <h4 style="font-size:0.875rem; margin-bottom:10px;" id="lbl-breakdown-title">Services & Medical Supplies Breakdown</h4>
+                <table class="custom-table" style="margin-bottom:18px;">
+                  <thead>
+                    <tr>
+                      <th>Service / Item</th>
+                      <th>Category</th>
+                      <th>Department</th>
+                      <th style="text-align:right;">Amount (ETB)</th>
+                    </tr>
+                  </thead>
+                  <tbody id="billing-items-body">
+                    <!-- Rendered by JS -->
+                  </tbody>
+                </table>
+
+                <div style="background:#F9FAFB; padding:14px; border-radius:6px; border:1px solid var(--border);">
+                  <div class="summary-line">
+                    <span>Gross Invoice Subtotal:</span>
+                    <span class="mono" id="bill-gross-subtotal">ETB 1,180.00</span>
+                  </div>
+                  <div class="summary-line">
+                    <span id="bill-payer-coverage-label">Insurance Coverage (CBHI 90%):</span>
+                    <span class="mono" style="color:var(--sage-green);" id="bill-payer-coverage-val">- ETB 1,062.00</span>
+                  </div>
+                  <div class="summary-line total" style="margin-top:8px;">
+                    <span id="lbl-patient-resp">Patient Responsibility (Copay):</span>
+                    <span class="mono" style="color:var(--text-main); font-size:1.2rem;" id="bill-patient-copay-val">ETB 118.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Payer / Insurance Selection Panel -->
+            <div class="panel">
+              <div class="panel-header">
+                <h3 class="panel-title" id="lbl-title-payer-select">Select Payer / Insurance</h3>
+              </div>
+              <div class="panel-body">
+                <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:14px;" id="lbl-payer-desc">Select primary insurance provider to adjust copay coverage:</p>
+
+                <!-- Payer Card 1: CBHI -->
+                <div class="payer-option-card active" data-payer="cbhi">
+                  <div class="payer-title">Community-Based Health Insurance (CBHI)</div>
+                  <div class="payer-desc">Ethiopian National Scheme • 90% Coverage (10% Copay)</div>
+                </div>
+
+                <!-- Payer Card 2: Nyala Insurance -->
+                <div class="payer-option-card" data-payer="nyala">
+                  <div class="payer-title">Nyala Insurance S.C.</div>
+                  <div class="payer-desc">Private Corporate Healthcare • 80% Coverage (20% Copay)</div>
+                </div>
+
+                <!-- Payer Card 3: Out of Pocket -->
+                <div class="payer-option-card" data-payer="self">
+                  <div class="payer-title">Private / Out-of-Pocket</div>
+                  <div class="payer-desc">Direct Cash or Telebirr • 0% Coverage (100% Patient)</div>
+                </div>
+
+                <div style="margin-top:20px; padding-top:14px; border-top:1px solid var(--border);">
+                  <button class="btn btn-success" style="width:100%; padding:10px;" id="btn-process-payment">
+                    Process ETB Payment & Issue Receipt
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Dialog / Receipt Notification Modal -->
+  <div class="modal-overlay" id="modal-dialog">
+    <div class="modal-box">
+      <h3 class="modal-title" id="modal-title">Transaction Successful</h3>
+      <div class="modal-body" id="modal-body">
+        Operation completed successfully.
+      </div>
+      <div style="text-align:right;">
+        <button class="btn btn-primary" id="modal-close-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
