@@ -437,7 +437,7 @@ let appState = {
 const I18N_DICTIONARY = {
   en: {
     brandTitle: "Meridian Healthcare",
-    brandSub: "ERPNext Desk • Ethiopia",
+    brandSub: "Front Desk & Clinical Portal",
     navMain: "Workspaces",
     navReceptionGroup: "Front Desk & Reception",
     navClinicalGroup: "Clinical & Diagnostics",
@@ -490,8 +490,8 @@ const I18N_DICTIONARY = {
     btnProcessPayment: "Process ETB Payment & Issue Receipt"
   },
   am: {
-    brandTitle: "ሜሪዲያን ጤና ኤስ.አር.ፒ.",
-    brandSub: "ኢ.አር.ፒ. ዴስክ • ኢትዮጵያ",
+    brandTitle: "ሜሪዲያን ጤና አገልግሎት",
+    brandSub: "የሆስፒታል መረጃ ስርዓት • ኢትዮጵያ",
     navMain: "የሥራ ቦታዎች",
     navReceptionGroup: "መቀበያ እና አስተናጋጅ",
     navClinicalGroup: "ሕክምና እና ምርመራ",
